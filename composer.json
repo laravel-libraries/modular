@@ -1,0 +1,14 @@
+{
+    "name": "laralibs/modular",
+    "authors": [
+        {
+            "name": "Daison Carino",
+            "email": "daison12006013@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LaraLibs\\Modular\\": "src/"
+        }
+    }
+}

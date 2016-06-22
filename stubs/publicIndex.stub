@@ -1,0 +1,32 @@
+<?php
+
+require __DIR__.'/../bootstrap/autoload.php';
+
+$app = new Illuminate\Foundation\Application(
+    realpath(__DIR__.'/../')
+);
+
+$app->singleton(
+    Illuminate\Contracts\Http\Kernel::class,
+    {baseNamespace}\{namespace}\Http\Kernel::class
+);
+
+$app->singleton(
+    Illuminate\Contracts\Console\Kernel::class,
+    {baseNamespace}\{namespace}\Console\Kernel::class
+);
+
+$app->singleton(
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    {baseNamespace}\{namespace}\Exceptions\Handler::class
+);
+
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+
+$response = $kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
+
+$response->send();
+
+$kernel->terminate($request, $response);
