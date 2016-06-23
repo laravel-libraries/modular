@@ -1,4 +1,6 @@
-# Modular Laravel
+![alt tag](https://raw.githubusercontent.com/laravel-libraries/modular/master/welcome.png)
+
+---
 
 Now managing your applications to have the same resources is made easy with this package.
 
