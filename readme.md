@@ -2,7 +2,7 @@
 
 Now managing your applications to have the same resources is made easy with this package.
 
-Imagine having an **API**, **Admin Panel**, any many more; that handles the same classes such as ``service providers``, ``models``, ``events``, ``console commands``, same ``migrations`` and etc.
+Imagine having an **API**, **Admin Panel** and some other functionalities that handles the same classes like ``service providers``, ``models``, ``events``, ``console commands``, ``migrations`` etc.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Add this service into your ``config/app.php`` at **providers** index.
 ],
 ```
 
-When you are than adding this class, you should be able to see ``make:module`` command when running ``php artisan``
+When you are done adding this class, you should be able to see ``make:module`` command after running the ``php artisan``
 
 ## Execution
 
