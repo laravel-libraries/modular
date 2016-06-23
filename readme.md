@@ -26,7 +26,7 @@ in your laravel project add this in your ``composer.json``
 }
 ```
 
-and add this **ModularServiceProvider`` in your ``config/app.php`` at **providers** index.
+and add this **ModularServiceProvider** in your ``config/app.php`` at **providers** index.
 
 ```php
 'providers' => [
