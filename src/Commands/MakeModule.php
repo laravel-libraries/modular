@@ -72,7 +72,7 @@ class MakeModule extends Command
             $stubPath.'/publicIndex.stub'                    => 'public/'.$this->moduleName.'.php',
             $stubPath.'/Console/Kernel.stub'                 => $this->baseFolder.'/'.$this->moduleNamespace.'/Console/Kernel.php',
             $stubPath.'/Controllers/Controller.stub'         => $this->baseFolder.'/'.$this->moduleNamespace.'/Controllers/Controller.php',
-            $stubPath.'/Exceptions/Handler.stub'              => $this->baseFolder.'/'.$this->moduleNamespace.'/Exceptions/Kernel.php',
+            $stubPath.'/Exceptions/Handler.stub'             => $this->baseFolder.'/'.$this->moduleNamespace.'/Exceptions/Kernel.php',
             $stubPath.'/Http/Kernel.stub'                    => $this->baseFolder.'/'.$this->moduleNamespace.'/Http/Kernel.php',
             $stubPath.'/Http/routes.stub'                    => $this->baseFolder.'/'.$this->moduleNamespace.'/Http/routes.php',
             $stubPath.'/Providers/RouteServiceProvider.stub' => $this->baseFolder.'/'.$this->moduleNamespace.'/Providers/RouteServiceProvider.php',
