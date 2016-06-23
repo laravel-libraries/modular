@@ -1,0 +1,4 @@
+welcome.png export-ignore
+README.md export-ignore
+*.blade.php linguist-vendored
+* text=auto

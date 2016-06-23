@@ -1,4 +1,6 @@
-# Modular Laravel
+![alt tag](https://raw.githubusercontent.com/laravel-libraries/modular/master/welcome.png)
+
+---
 
 Now managing your applications to have the same resources is made easy with this package.
 
@@ -6,9 +8,27 @@ Imagine having an **API**, **Admin Panel** and some other functionalities that h
 
 ## Installation
 
-via composer ``composer require laralibs/modular@0.*@dev``
+via console, execute this ``composer require laralibs/modular@0.*@dev``
 
-Add this service into your ``config/app.php`` at **providers** index.
+in your laravel project add this in your ``composer.json``
+
+```json
+{
+    ...
+
+    "autoload": {
+        ...
+        "psr-4": {
+            ...
+            "Modules\\": "modules"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+```
+
+and add this **ModularServiceProvider** in your ``config/app.php`` at **providers** index.
 
 ```php
 'providers' => [
