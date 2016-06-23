@@ -6,9 +6,19 @@ Imagine having an **API**, **Admin Panel** and some other functionalities that h
 
 ## Installation
 
-via composer ``composer require laralibs/modular@0.*@dev``
+via console, execute this ``composer require laralibs/modular@0.*@dev``
 
-Add this service into your ``config/app.php`` at **providers** index.
+in your laravel project add this in your ``composer.json``
+
+```json
+{
+    ...
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+```
+
+and add this **ModularServiceProvider`` in your ``config/app.php`` at **providers** index.
 
 ```php
 'providers' => [
