@@ -63,3 +63,4 @@ Now point your NginX or Apache to use the ``public/admin.php`` instead, and you 
 ## Contributors
 
 - [Daison Carino](https://github.com/daison12006013)
+- [Napoleon Carino](https://github.com/napoleon101392)
