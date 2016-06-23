@@ -13,6 +13,14 @@ in your laravel project add this in your ``composer.json``
 ```json
 {
     ...
+
+    "autoload": {
+        ...
+        "psr-4": {
+            ...
+            "Modules\\": "modules"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
