@@ -113,5 +113,11 @@ class MakeModule extends Command
         $this->line("Module {$this->moduleName} has been generated.");
         $this->line("  Add this to your config/app.php@providers");
         $this->info("  {$this->baseNamespace}\\{$this->moduleNamespace}\\Providers\\RouteServiceProvider::class");
+
+        Storage::extend('local', function($app, $config) {
+            $client = new Local(base_path());
+
+            return new Filesystem($client);
+        });
     }
 }
