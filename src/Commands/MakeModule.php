@@ -4,6 +4,8 @@ namespace LaraLibs\Modular\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
+use League\Flysystem\Filesystem;
+use League\Flysystem\Adapter\Local;
 
 class MakeModule extends Command
 {
@@ -57,6 +59,12 @@ class MakeModule extends Command
     public function __construct()
     {
         parent::__construct();
+
+        Storage::extend('local', function($app, $config) {
+            $client = new Local(base_path());
+
+            return new Filesystem($client);
+        });
     }
 
     /**
@@ -113,11 +121,5 @@ class MakeModule extends Command
         $this->line("Module {$this->moduleName} has been generated.");
         $this->line("  Add this to your config/app.php@providers");
         $this->info("  {$this->baseNamespace}\\{$this->moduleNamespace}\\Providers\\RouteServiceProvider::class");
-
-        Storage::extend('local', function($app, $config) {
-            $client = new Local(base_path());
-
-            return new Filesystem($client);
-        });
     }
 }

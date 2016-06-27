@@ -1,8 +1,6 @@
 <?php
 namespace LaraLibs\Modular;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\Adapter\Local;
 use Illuminate\Support\ServiceProvider;
 
 class ModularServiceProvider extends ServiceProvider
