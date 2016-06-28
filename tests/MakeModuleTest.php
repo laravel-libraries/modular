@@ -16,42 +16,42 @@ class MakeModuleTest extends PHPUnit_Framework_TestCase
 
 	public function testConsoleKernelIfExist()
 	{
-		$consoleKernel = base_path('modules/naganna/Console/Kernel.php');
+		$consoleKernel = base_path('modules/Naganna/Console/Kernel.php');
 
 		$this->assertTrue(file_exists($consoleKernel));
 	}
 
 	public function testControllersControllerIfExist()
 	{
-		$controllersController = base_path('modules/naganna/Controllers/Controller.php');
+		$controllersController = base_path('modules/Naganna/Controllers/Controller.php');
 
 		$this->assertTrue(file_exists($controllersController));
 	}
 
 	public function testExceptionsKernelIfExist()
 	{
-		$exceptionsKernel = base_path('modules/naganna/Exceptions/Kernel.php');
+		$exceptionsKernel = base_path('modules/Naganna/Exceptions/Kernel.php');
 
 		$this->assertTrue(file_exists($exceptionsKernel));
 	}
 
 	public function testHttpKernelIfExist()
 	{
-		$httpKernel = base_path('modules/naganna/Http/Kernel.php');
+		$httpKernel = base_path('modules/Naganna/Http/Kernel.php');
 
 		$this->assertTrue(file_exists($httpKernel));
 	}
 
 	public function testHttpRoutesIfExist()
 	{
-		$httpRoutes = base_path('modules/naganna/Http/routes.php');
+		$httpRoutes = base_path('modules/Naganna/Http/routes.php');
 
 		$this->assertTrue(file_exists($httpRoutes));
 	}
 
 	public function testProvidersRouteServiceProviderIfExist()
 	{
-		$providersRouteServiceProvider = base_path('modules/naganna/Providers/RouteServiceProvider.php');
+		$providersRouteServiceProvider = base_path('modules/Naganna/Providers/RouteServiceProvider.php');
 
 		$this->assertTrue(file_exists($providersRouteServiceProvider));
 	}
