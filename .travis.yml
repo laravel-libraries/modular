@@ -28,9 +28,9 @@ script:
   - composer update
   #- cat config/app.php
   #- ls vendor/laralibs/modular
-  - php artisan cache:clear
-  - php artisan config:clear
-  - vendor/bin/phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
+  - sudo php artisan cache:clear
+  - sudo php artisan config:clear
+  - sudo vendor/bin/phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
 
 notifications:
   email:
