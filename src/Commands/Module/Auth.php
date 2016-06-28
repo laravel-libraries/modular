@@ -94,6 +94,6 @@ class Auth extends MakeAuthCommand
      */
     public function getAppNamespace()
     {
-        return $this->toNamespace('modules\\'.$this->argument('name')).'\\';
+        return $this->toNamespace('modules/'.$this->argument('name')).'\\';
     }
 }

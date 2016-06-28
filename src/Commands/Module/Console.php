@@ -2,16 +2,16 @@
 
 namespace LaraLibs\Modular\Commands\Module;
 
-use LaraLibs\Modular\Commands\Command;
+use Illuminate\Foundation\Console\ConsoleMakeCommand;
 
-class Console extends Command
+class Console extends ConsoleMakeCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'module:console module name';
+    protected $name = 'module:console';
 
     /**
      * The console command description.
@@ -25,7 +25,12 @@ class Console extends Command
      *
      * @return mixed
      */
-    public function handle()
+    public function getArguments()
     {
+        $args = [
+            ['module', InputArgument::REQUIRED, 'The module name to use.'],
+        ];
+
+        return array_merge_recursive($args, parent::getArguments());
     }
 }

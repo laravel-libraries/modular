@@ -65,6 +65,6 @@ class Module extends Commands\Command
 
         $this->line("Module {$moduleName} has been generated.");
         $this->line("  Add this to your config/app.php@providers");
-        $this->info("  {$this->toNamespace('modules\\'.$moduleName)}\\Providers\\RouteServiceProvider::class");
+        $this->info("  {$this->toNamespace('modules/'.$moduleName)}\\Providers\\RouteServiceProvider::class");
     }
 }

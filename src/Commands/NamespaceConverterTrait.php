@@ -11,9 +11,11 @@ trait NamespaceConverterTrait
      */
     public function toNamespace($str = null)
     {
-        $recs = explode('\\', $str);
+        // explode things by using slashes
+        $recs = explode('/', $str);
 
         $recs = array_map(function($val) {
+            // now convert it to match the namespaces
             return ucfirst(camel_case($val));
         }, $recs);
 
