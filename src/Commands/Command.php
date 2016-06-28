@@ -9,13 +9,6 @@ use Illuminate\Console\Command as BaseCommand;
 class Command extends BaseCommand
 {
     /**
-     * The base folder
-     *
-     * @var string
-     */
-    protected $baseFolder = 'modules';
-
-    /**
      * {@inheritdoc}
      * Extend the storage local to use the basepath/root folder
      */
