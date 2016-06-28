@@ -42,13 +42,13 @@ and add this **ModularServiceProvider** in your ``config/app.php`` at **provider
 ],
 ```
 
-When you are done adding this class, you should be able to see ``bundle:module`` command after running the ``php artisan``
+When you are done adding this class, you should be able to see ``make:bundle`` command after running the ``php artisan``
 
 ## Execution
 
 When running the command
 
-``php artisan bundle:module admin``, this should generate the lists of files
+``php artisan make:bundle admin``, this should generate the lists of files
 
 - public/admin.php
 - modules/Admin/Console/Kernel.php
