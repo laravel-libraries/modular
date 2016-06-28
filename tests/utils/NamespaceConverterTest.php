@@ -23,4 +23,12 @@ class NamespaceConverterTest extends PHPUnit_Framework_TestCase
             $this->toNamespace('illuminate/support/facades')
         );
     }
+
+    public function testWithSlashesAlongSpaces()
+    {
+        $this->assertEquals(
+            'This\\Is\\JustA\\Test\\For\\SPacEs',
+            $this->toNamespace('this/is/just_a/test/for/s pac_es')
+        );
+    }
 }
