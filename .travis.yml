@@ -31,6 +31,7 @@ script:
   - sudo php artisan cache:clear
   - sudo php artisan config:clear
   - sudo vendor/bin/phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
+  - ls modules/
 
 notifications:
   email:
