@@ -2,6 +2,10 @@
 
 ---
 
+| master branch                                                                                                                     |
+|----------------------------------------------------------------------------------------------------------------------------------------|
+| [![Build Status](https://travis-ci.org/laravel-libraries/modular.svg?branch=master)](https://travis-ci.org/laravel-libraries/modular)  |
+
 Now managing your applications to have the same resources is made easy with this package.
 
 Imagine having an **API**, **Admin Panel** and some other functionalities that handles the same classes like ``service providers``, ``models``, ``events``, ``console commands``, ``migrations`` etc.
