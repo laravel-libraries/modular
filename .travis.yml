@@ -21,14 +21,15 @@ cache:
     - laravel
 
 install:
-  - export PACKAGE_PROVIDER="
-    LaraLibs\\\\Modular\\\\ModularServiceProvider::class"
+  - export PACKAGE_PROVIDER="LaraLibs\\\\Modular\\\\ModularServiceProvider::class"
   - export PACKAGE_NAME=laralibs/modular
   - curl -s https://raw.githubusercontent.com/laravel-libraries/modular/master/build.sh | bash
 
 script:
   - cd laravel
   - composer update
+  - cat config/app.php
+  - ls vendor/laralibs/modular
   - php artisan cache:clear
   - php artisan config:clear
   - phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
