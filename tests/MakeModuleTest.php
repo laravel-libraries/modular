@@ -1,55 +1,47 @@
 <?php
 
-use Illuminate\Support\Facades\Artisan;
-
-class MakeModuleTest extends PHPUnit_Framework_TestCase
+class MakeModuleTraitTest extends PHPUnit_Framework_TestCase
 {
-	public function setUp()
-	{
-		Artisan::call('make:module', [
-			'name' => 'naganna',
-		]);
-	}
+    public function setUp()
+    {
+        Artisan::call('make:module', [
+            'name' => 'naganna',
+        ]);
+    }
 
-	public function testConsoleKernelIfExist()
-	{
-		$consoleKernel = base_path('modules/Naganna/Console/Kernel.php');
+    public function testConsoleKernelIfExist()
+    {
+        $path = base_path('modules/Naganna/Console/Kernel.php');
+        $this->assertTrue(file_exists($path));
+    }
 
-		$this->assertTrue(file_exists($consoleKernel));
-	}
+    public function testControllersIfExist()
+    {
+        $path = base_path('modules/Naganna/Http/Controllers/Controller.php');
+        $this->assertTrue(file_exists($path));
+    }
 
-	public function testControllersIfExist()
-	{
-		$controllersController = base_path('modules/Naganna/Http/Controllers/Controller.php');
+    public function testExceptionsKernelIfExist()
+    {
+        $path = base_path('modules/Naganna/Exceptions/Kernel.php');
+        $this->assertTrue(file_exists($path));
+    }
 
-		$this->assertTrue(file_exists($controllersController));
-	}
+    public function testHttpKernelIfExist()
+    {
+        $path = base_path('modules/Naganna/Http/Kernel.php');
+        $this->assertTrue(file_exists($path));
+    }
 
-	public function testExceptionsKernelIfExist()
-	{
-		$exceptionsKernel = base_path('modules/Naganna/Exceptions/Kernel.php');
+    public function testHttpRoutesIfExist()
+    {
+        $path = base_path('modules/Naganna/Http/routes.php');
+        $this->assertTrue(file_exists($path));
+    }
 
-		$this->assertTrue(file_exists($exceptionsKernel));
-	}
-
-	public function testHttpKernelIfExist()
-	{
-		$httpKernel = base_path('modules/Naganna/Http/Kernel.php');
-
-		$this->assertTrue(file_exists($httpKernel));
-	}
-
-	public function testHttpRoutesIfExist()
-	{
-		$httpRoutes = base_path('modules/Naganna/Http/routes.php');
-
-		$this->assertTrue(file_exists($httpRoutes));
-	}
-
-	public function testProvidersRouteServiceProviderIfExist()
-	{
-		$providersRouteServiceProvider = base_path('modules/Naganna/Providers/RouteServiceProvider.php');
-
-		$this->assertTrue(file_exists($providersRouteServiceProvider));
-	}
+    public function testProvidersRouteServiceProviderIfExist()
+    {
+        $path = base_path('modules/Naganna/Providers/RouteServiceProvider.php');
+        $this->assertTrue(file_exists($path));
+    }
 }
