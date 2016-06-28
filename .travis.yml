@@ -28,11 +28,11 @@ install:
 script:
   - cd laravel
   - composer update
-  - cat config/app.php
-  - ls vendor/laralibs/modular
+  #- cat config/app.php
+  #- ls vendor/laralibs/modular
   - php artisan cache:clear
   - php artisan config:clear
-  - phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
+  - sudo vendor/bin/phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
 
 notifications:
   email:

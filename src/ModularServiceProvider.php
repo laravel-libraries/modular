@@ -7,9 +7,7 @@ class ModularServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        
         $this->loadViewsFrom(__DIR__.'/Views/', 'modular');
-
     }
 
     public function register()
