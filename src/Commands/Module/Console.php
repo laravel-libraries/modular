@@ -1,24 +1,24 @@
 <?php
 
-namespace LaraLibs\Modular\Commands\Bundle;
+namespace LaraLibs\Modular\Commands\Module;
 
 use LaraLibs\Modular\Commands\Command;
 
-class Middleware extends Command
+class Console extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'bundle:middleware';
+    protected $signature = 'module:console';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new bundle\'s middleware';
+    protected $description = 'Create a new module\'s console';
 
     /**
      * Execute the console command.

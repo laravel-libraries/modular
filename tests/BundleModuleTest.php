@@ -9,8 +9,8 @@ class BundleModuleTest extends PHPUnit_Framework_TestCase
 
 	public function setUp()
 	{
-		Artisan::call('make:bundle', [
-			'bundle_name' => 'naganna',
+		Artisan::call('make:module', [
+			'name' => 'naganna',
 		]);
 	}
 

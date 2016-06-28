@@ -13,12 +13,12 @@ class ModularServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands([
-            Commands\Bundle\Console::class,
-            Commands\Bundle\Controller::class,
-            Commands\Bundle\Middleware::class,
-            Commands\Bundle\Model::class,
-            Commands\Bundle\Provider::class,
-            Commands\Make\Bundle::class,
+            Commands\Module\Console::class,
+            Commands\Module\Controller::class,
+            Commands\Module\Middleware::class,
+            Commands\Module\Model::class,
+            Commands\Module\Provider::class,
+            Commands\Make\Module::class,
         ]);
     }
 }
