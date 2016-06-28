@@ -16,7 +16,7 @@ matrix:
 
 cache:
   directories:
-    - laravel
+    - laravel/vendor
 
 install:
   - export PACKAGE_PROVIDER="LaraLibs\\\\Modular\\\\ModularServiceProvider::class"
