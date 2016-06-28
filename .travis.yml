@@ -8,6 +8,11 @@ php:
   - 7.0
   - hhvm
 
+env:
+  matrix:
+    - GIT_BRANCH=dev-master
+    - GIT_BRANCH=dev-develop
+
 matrix:
   fast_finish: true
 
@@ -25,15 +30,14 @@ install:
 
 script:
   - cd laravel
+  - composer require ${PACKAGE_NAME}:${GIT_VERSION}
   - composer update
   #- cat config/app.php
   #- ls vendor/laralibs/modular
   - sudo php artisan cache:clear
   - sudo php artisan config:clear
-  - sudo vendor/bin/phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
+  - sudo vendor/bin/phpunit -c vendor/${PACKAGE_NAME}/phpunit.xml
   #- ls modules/ -R
-  - rm -rf modules
-  - rm -rf resources/views/vendor/modular
 
 notifications:
   email:

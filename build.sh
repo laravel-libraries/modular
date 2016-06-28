@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 if [ ! -f "laravel/composer.json" ]; then
-
-    rm -rf laravel
     composer create-project laravel/laravel
+
     cd laravel
+
     composer update
-    composer require $PACKAGE_NAME:dev-master
 
     if [[ -v PACKAGE_PROVIDER ]]; then
         echo "$(awk '/'\''providers'\''[^\n]*?\[/ { print; print "'$(sed -e 's/\s*//g' <<<${PACKAGE_PROVIDER})',"; next }1' \
@@ -20,7 +19,8 @@ if [ ! -f "laravel/composer.json" ]; then
     fi
 
     php artisan vendor:publish
-    composer dumpautoload
 
-    cd ..
+    composer dumpautoload
 fi
+
+cd ..
