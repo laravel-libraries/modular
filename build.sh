@@ -21,6 +21,6 @@ if [ ! -f "laravel/composer.json" ]; then
 
     php artisan vendor:publish
     composer dumpautoload
-    
+
     cd ..
 fi

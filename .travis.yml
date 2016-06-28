@@ -29,7 +29,9 @@ install:
 script:
   - cd laravel
   - composer update
-  - phpunit "vendor/$PACKAGE_NAME"
+  - php artisan cache:clear
+  - php artisan config:clear
+  - phpunit -c vendor/$PACKAGE_NAME/phpunit.xml
 
 notifications:
   email:
