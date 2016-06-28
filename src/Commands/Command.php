@@ -29,15 +29,4 @@ class Command extends BaseCommand
             return new Filesystem($client);
         });
     }
-
-    /**
-     * Transform string into a single namespace
-     *
-     * @param  string $str
-     * @return string
-     */
-    protected function toNamespace($str)
-    {
-        return ucfirst(camel_case($str));
-    }
 }

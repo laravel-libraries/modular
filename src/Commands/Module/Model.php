@@ -18,7 +18,7 @@ class Model extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new module\'s model';
+    protected $description = 'Create a new module\'s Eloquent model class';
 
     /**
      * Execute the console command.

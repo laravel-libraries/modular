@@ -18,7 +18,7 @@ class Provider extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new module\'s provider';
+    protected $description = 'Create a new module\'s service provider class';
 
     /**
      * Execute the console command.

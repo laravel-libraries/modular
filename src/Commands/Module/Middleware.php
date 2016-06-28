@@ -18,7 +18,7 @@ class Middleware extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new module\'s middleware';
+    protected $description = 'Create a new module\'s middleware class';
 
     /**
      * Execute the console command.

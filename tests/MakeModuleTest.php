@@ -1,12 +1,9 @@
 <?php
 
-
 use Illuminate\Support\Facades\Artisan;
 
-
-class BundleModuleTest extends PHPUnit_Framework_TestCase
+class MakeModuleTest extends PHPUnit_Framework_TestCase
 {
-
 	public function setUp()
 	{
 		Artisan::call('make:module', [
@@ -21,9 +18,9 @@ class BundleModuleTest extends PHPUnit_Framework_TestCase
 		$this->assertTrue(file_exists($consoleKernel));
 	}
 
-	public function testControllersControllerIfExist()
+	public function testControllersIfExist()
 	{
-		$controllersController = base_path('modules/Naganna/Controllers/Controller.php');
+		$controllersController = base_path('modules/Naganna/Http/Controllers/Controller.php');
 
 		$this->assertTrue(file_exists($controllersController));
 	}
@@ -55,5 +52,4 @@ class BundleModuleTest extends PHPUnit_Framework_TestCase
 
 		$this->assertTrue(file_exists($providersRouteServiceProvider));
 	}
-
 }

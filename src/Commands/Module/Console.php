@@ -11,14 +11,14 @@ class Console extends Command
      *
      * @var string
      */
-    protected $signature = 'module:console';
+    protected $signature = 'module:console module name';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new module\'s console';
+    protected $description = 'Create a new module\'s Artisan command';
 
     /**
      * Execute the console command.

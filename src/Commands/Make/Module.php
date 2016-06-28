@@ -2,11 +2,13 @@
 
 namespace LaraLibs\Modular\Commands\Make;
 
-use LaraLibs\Modular\Commands\Command;
+use LaraLibs\Modular\Commands;
 use Illuminate\Support\Facades\Storage;
 
-class Module extends Command
+class Module extends Commands\Command
 {
+    use Commands\NamespaceConverterTrait;
+
     /**
      * The name and signature of the console command.
      *
@@ -32,12 +34,12 @@ class Module extends Command
 
         return [
             $stubPath.'/publicIndex.stub'                    => 'public/'.$moduleName.'.php',
-            $stubPath.'/Console/Kernel.stub'                 => $this->baseFolder.'/'.$this->toNamespace($moduleName).'/Console/Kernel.php',
-            $stubPath.'/Controllers/Controller.stub'         => $this->baseFolder.'/'.$this->toNamespace($moduleName).'/Controllers/Controller.php',
-            $stubPath.'/Exceptions/Handler.stub'             => $this->baseFolder.'/'.$this->toNamespace($moduleName).'/Exceptions/Kernel.php',
-            $stubPath.'/Http/Kernel.stub'                    => $this->baseFolder.'/'.$this->toNamespace($moduleName).'/Http/Kernel.php',
-            $stubPath.'/Http/routes.stub'                    => $this->baseFolder.'/'.$this->toNamespace($moduleName).'/Http/routes.php',
-            $stubPath.'/Providers/RouteServiceProvider.stub' => $this->baseFolder.'/'.$this->toNamespace($moduleName).'/Providers/RouteServiceProvider.php',
+            $stubPath.'/Console/Kernel.stub'                 => 'modules/'.$this->toNamespace($moduleName).'/Console/Kernel.php',
+            $stubPath.'/Exceptions/Handler.stub'             => 'modules/'.$this->toNamespace($moduleName).'/Exceptions/Kernel.php',
+            $stubPath.'/Http/Controllers/Controller.stub'    => 'modules/'.$this->toNamespace($moduleName).'/Http/Controllers/Controller.php',
+            $stubPath.'/Http/Kernel.stub'                    => 'modules/'.$this->toNamespace($moduleName).'/Http/Kernel.php',
+            $stubPath.'/Http/routes.stub'                    => 'modules/'.$this->toNamespace($moduleName).'/Http/routes.php',
+            $stubPath.'/Providers/RouteServiceProvider.stub' => 'modules/'.$this->toNamespace($moduleName).'/Providers/RouteServiceProvider.php',
         ];
     }
 
@@ -55,7 +57,7 @@ class Module extends Command
             // change the stub contents
             $content = strtr(file_get_contents($stub), [
                 '{namespace}'     => $this->toNamespace($moduleName),
-                '{baseNamespace}' => $this->toNamespace($this->baseFolder),
+                '{baseNamespace}' => $this->toNamespace('modules'),
             ]);
 
             Storage::disk('local')->put($savePath, $content);
@@ -63,6 +65,6 @@ class Module extends Command
 
         $this->line("Module {$moduleName} has been generated.");
         $this->line("  Add this to your config/app.php@providers");
-        $this->info("  {$this->toNamespace($this->baseFolder)}\\{$this->toNamespace($moduleName)}\\Providers\\RouteServiceProvider::class");
+        $this->info("  {$this->toNamespace('modules\\'.$moduleName)}\\Providers\\RouteServiceProvider::class");
     }
 }
