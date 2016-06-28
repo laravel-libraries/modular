@@ -2,9 +2,9 @@
 
 ---
 
-| master branch                                                                                                                     |
-|----------------------------------------------------------------------------------------------------------------------------------------|
-| [![Build Status](https://travis-ci.org/laravel-libraries/modular.svg?branch=master)](https://travis-ci.org/laravel-libraries/modular)  |
+| master branch                                                                                                                          | develop branch                                                                                                                          |
+|----------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------------------------------------------|
+| [![Build Status](https://travis-ci.org/laravel-libraries/modular.svg?branch=master)](https://travis-ci.org/laravel-libraries/modular)  | [![Build Status](https://travis-ci.org/laravel-libraries/modular.svg?branch=develop)](https://travis-ci.org/laravel-libraries/modular)  |
 
 Now managing your applications to have the same resources is made easy with this package.
 
@@ -42,13 +42,13 @@ and add this **ModularServiceProvider** in your ``config/app.php`` at **provider
 ],
 ```
 
-When you are done adding this class, you should be able to see ``make:module`` command after running the ``php artisan``
+When you are done adding this class, you should be able to see ``bundle:module`` command after running the ``php artisan``
 
 ## Execution
 
 When running the command
 
-``php artisan make:console admin``, this should generate the lists of files
+``php artisan bundle:module admin``, this should generate the lists of files
 
 - public/admin.php
 - modules/Admin/Console/Kernel.php

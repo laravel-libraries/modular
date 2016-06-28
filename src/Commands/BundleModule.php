@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local;
 
-class MakeModule extends Command
+class BundleModule extends Command
 {
     /**
      * The module namespace to use
@@ -42,7 +42,7 @@ class MakeModule extends Command
      *
      * @var string
      */
-    protected $signature = 'make:module {name} {--namespace=}';
+    protected $signature = 'bundle:module {name} {--namespace=}';
 
     /**
      * The console command description.

@@ -4,12 +4,12 @@
 use Illuminate\Support\Facades\Artisan;
 
 
-class MakeModuleTest extends PHPUnit_Framework_TestCase
+class BundleModuleTest extends PHPUnit_Framework_TestCase
 {
 
 	public function setUp()
 	{
-		Artisan::call('make:module', [
+		Artisan::call('bundle:module', [
 			'name' => 'naganna',
 		]);
 	}
