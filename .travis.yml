@@ -9,14 +9,15 @@ php:
 
 env:
   matrix:
-    - MODULAR_VERSION=dev-master LARAVEL_VERSION=5.0.* LARAVEL_FOLDER=laravel5.0
-    - MODULAR_VERSION=dev-master LARAVEL_VERSION=5.1.* LARAVEL_FOLDER=laravel5.1
-    - MODULAR_VERSION=dev-master LARAVEL_VERSION=5.2.* LARAVEL_FOLDER=laravel5.2
-    - MODULAR_VERSION=dev-master LARAVEL_VERSION=dev-develop LARAVEL_FOLDER=laravel5.3
-    - MODULAR_VERSION=dev-develop LARAVEL_VERSION=5.0.* LARAVEL_FOLDER=laravel5.0
-    - MODULAR_VERSION=dev-develop LARAVEL_VERSION=5.1.* LARAVEL_FOLDER=laravel5.1
-    - MODULAR_VERSION=dev-develop LARAVEL_VERSION=5.2.* LARAVEL_FOLDER=laravel5.2
-    - MODULAR_VERSION=dev-develop LARAVEL_VERSION=dev-develop LARAVEL_FOLDER=laravel5.3
+    - MODULAR_SH=master MODULAR_VERSION=dev-master LARAVEL_VERSION=5.0.* LARAVEL_FOLDER=laravel5.0
+    - MODULAR_SH=master MODULAR_VERSION=dev-master LARAVEL_VERSION=5.1.* LARAVEL_FOLDER=laravel5.1
+    - MODULAR_SH=master MODULAR_VERSION=dev-master LARAVEL_VERSION=5.2.* LARAVEL_FOLDER=laravel5.2
+    - MODULAR_SH=master MODULAR_VERSION=dev-master LARAVEL_VERSION=dev-develop LARAVEL_FOLDER=laravel5.3
+
+    - MODULAR_SH=develop MODULAR_VERSION=dev-develop LARAVEL_VERSION=5.0.* LARAVEL_FOLDER=laravel5.0
+    - MODULAR_SH=develop MODULAR_VERSION=dev-develop LARAVEL_VERSION=5.1.* LARAVEL_FOLDER=laravel5.1
+    - MODULAR_SH=develop MODULAR_VERSION=dev-develop LARAVEL_VERSION=5.2.* LARAVEL_FOLDER=laravel5.2
+    - MODULAR_SH=develop MODULAR_VERSION=dev-develop LARAVEL_VERSION=dev-develop LARAVEL_FOLDER=laravel5.3
 
 matrix:
   fast_finish: true
@@ -31,7 +32,7 @@ cache:
 install:
   - export PACKAGE_PROVIDER="LaraLibs\\\\Modular\\\\ModularServiceProvider::class"
   - export PACKAGE_NAME=laralibs/modular
-  - curl -s https://raw.githubusercontent.com/laravel-libraries/modular/master/build.sh | bash
+  - curl -s https://raw.githubusercontent.com/laravel-libraries/modular/${MODULAR_SH}/build.sh | bash
 
 script:
   - cd ${LARAVEL_FOLDER}
