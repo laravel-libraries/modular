@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-if [ ! -f "laravel/composer.json" ]; then
-    composer create-project laravel/laravel
+if [ ! -f "${LARAVEL_FOLDER}/composer.json" ]; then
+    composer create-project laravel/laravel:${LARAVEL_VERSION} ${LARAVEL_FOLDER}
 
-    cd laravel
+    cd ${LARAVEL_FOLDER}
 
     composer update
 
