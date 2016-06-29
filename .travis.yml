@@ -9,10 +9,10 @@ php:
 
 env:
   matrix:
-    - LARAVEL_FOLDER=laravel5.0    LARAVEL_VERSION=5.0.*
-    - LARAVEL_FOLDER=laravel5.1    LARAVEL_VERSION=5.1.*
-    - LARAVEL_FOLDER=laravel5.2    LARAVEL_VERSION=5.2.*
-    - LARAVEL_FOLDER=laravel5.3    LARAVEL_VERSION=dev-develop
+    - LARAVEL_FOLDER=laravel50    LARAVEL_VERSION=5.0.*
+    - LARAVEL_FOLDER=laravel51    LARAVEL_VERSION=5.1.*
+    - LARAVEL_FOLDER=laravel52    LARAVEL_VERSION=5.2.*
+    - LARAVEL_FOLDER=laravel53    LARAVEL_VERSION=dev-develop
 
 matrix:
   fast_finish: true
@@ -22,23 +22,25 @@ matrix:
 
 cache:
   directories:
-    - ${LARAVEL_FOLDER}/vendor
+    - ${LARAVEL_FOLDER}
+
+before_cache:
+  - rm -rf ${LARAVEL_FOLDER}/modules
+  - rm -rf ${LARAVEL_FOLDER}/resources/views/vendor/modular
 
 install:
-  - export PACKAGE_PROVIDER="LaraLibs\\\\Modular\\\\ModularServiceProvider::class"
   - export PACKAGE_NAME=laralibs/modular
+  - export PACKAGE_PROVIDER="LaraLibs\\\\Modular\\\\ModularServiceProvider::class"
   - curl -s https://raw.githubusercontent.com/laravel-libraries/modular/${TRAVIS_BRANCH}/build.sh | bash
 
 script:
   - cd ${LARAVEL_FOLDER}
   - composer require ${PACKAGE_NAME}:dev-${TRAVIS_BRANCH}
   - composer update
-  #- cat config/app.php
-  #- ls vendor/laralibs/modular
-  - sudo php artisan cache:clear
-  - sudo php artisan config:clear
-  - sudo vendor/bin/phpunit -c vendor/${PACKAGE_NAME}/phpunit.xml
-  #- ls modules/ -R
+  - ls
+  - ./artisan cache:clear
+  - ./artisan config:clear
+  - vendor/bin/phpunit -c vendor/${PACKAGE_NAME}/phpunit.xml
 
 notifications:
   email:
