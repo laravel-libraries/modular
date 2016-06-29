@@ -9,10 +9,10 @@ php:
 
 env:
   matrix:
-    - LARAVEL_FOLDER=laravel50    LARAVEL_VERSION=5.0.*
-    - LARAVEL_FOLDER=laravel51    LARAVEL_VERSION=5.1.*
-    - LARAVEL_FOLDER=laravel52    LARAVEL_VERSION=5.2.*
-    - LARAVEL_FOLDER=laravel53    LARAVEL_VERSION=dev-develop
+    - LARAVEL_FOLDER=laravel50    LARAVEL_VERSION=5.0.*          TEST_SUITE=Laravel5.0
+    - LARAVEL_FOLDER=laravel51    LARAVEL_VERSION=5.1.*          TEST_SUITE=Laravel5.1
+    - LARAVEL_FOLDER=laravel52    LARAVEL_VERSION=5.2.*          TEST_SUITE=Laravel5.2
+    - LARAVEL_FOLDER=laravel53    LARAVEL_VERSION=dev-develop    TEST_SUITE=Laravel5.3
 
 matrix:
   fast_finish: true
@@ -34,13 +34,7 @@ install:
   - curl -s https://raw.githubusercontent.com/laravel-libraries/modular/${TRAVIS_BRANCH}/build.sh | bash
 
 script:
-  - cd ${LARAVEL_FOLDER}
-  - composer require ${PACKAGE_NAME}:dev-${TRAVIS_BRANCH}
-  - composer update
-  - ls
-  - ./artisan cache:clear
-  - ./artisan config:clear
-  - vendor/bin/phpunit -c vendor/${PACKAGE_NAME}/phpunit.xml
+  - curl -s https://raw.githubusercontent.com/laravel-libraries/modular/${TRAVIS_BRANCH}/script.sh | bash
 
 notifications:
   email:

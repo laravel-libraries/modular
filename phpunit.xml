@@ -12,14 +12,17 @@
     syntaxCheck="false"
 >
     <testsuites>
-        <testsuite name="Utils">
-            <directory>./tests/utils</directory>
+        <testsuite name="Laravel5.0">
+            <directory>./tests/Laravel5.0</directory>
         </testsuite>
-        <testsuite name="Make">
-            <directory>./tests/make</directory>
+        <testsuite name="Laravel5.1">
+            <directory>./tests/Laravel5.1</directory>
         </testsuite>
-        <testsuite name="Module">
-            <directory>./tests/module</directory>
+        <testsuite name="Laravel5.2">
+            <directory>./tests/Laravel5.2</directory>
+        </testsuite>
+        <testsuite name="Laravel5.3">
+            <directory>./tests/Laravel5.3</directory>
         </testsuite>
     </testsuites>
 </phpunit>
