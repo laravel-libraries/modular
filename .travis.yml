@@ -13,10 +13,6 @@ env:
     - LARAVEL_FOLDER=laravel5.1    LARAVEL_VERSION=5.1.*
     - LARAVEL_FOLDER=laravel5.2    LARAVEL_VERSION=5.2.*
     - LARAVEL_FOLDER=laravel5.3    LARAVEL_VERSION=dev-develop
-    - LARAVEL_FOLDER=laravel5.0    LARAVEL_VERSION=5.0.*
-    - LARAVEL_FOLDER=laravel5.1    LARAVEL_VERSION=5.1.*
-    - LARAVEL_FOLDER=laravel5.2    LARAVEL_VERSION=5.2.*
-    - LARAVEL_FOLDER=laravel5.3    LARAVEL_VERSION=dev-develop
 
 matrix:
   fast_finish: true
