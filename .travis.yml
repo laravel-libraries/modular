@@ -25,6 +25,8 @@ cache:
     - ${LARAVEL_FOLDER}
 
 before_cache:
+  - rm ${LARAVEL_FOLDER}/storage/framework/compiled.php
+  - rm ${LARAVEL_FOLDER}/vendor/compiled.php
   - rm -rf ${LARAVEL_FOLDER}/modules
   - rm -rf ${LARAVEL_FOLDER}/resources/views/vendor/modular
 
