@@ -81,7 +81,7 @@ class Module extends Commands\Command
      *
      * @return array
      */
-    public function getArguments()
+    protected function getArguments()
     {
         return [
             ['name', InputArgument::REQUIRED, 'The module name'],
