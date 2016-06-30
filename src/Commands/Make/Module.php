@@ -4,17 +4,25 @@ namespace LaraLibs\Modular\Commands\Make;
 
 use LaraLibs\Modular\Commands;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Console\Input\InputArgument;
 
 class Module extends Commands\Command
 {
     use Commands\NamespaceConverterTrait;
 
     /**
+     * To support 5.0, the old way
+     *
+     * @var string
+     */
+    protected $name = 'make:module';
+
+    /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'make:module {name}';
+    protected $signature = 'make:module {name: The module name}';
 
     /**
      * The console command description.
@@ -66,5 +74,17 @@ class Module extends Commands\Command
         $this->line("Module {$moduleName} has been generated.");
         $this->line("  Add this to your config/app.php@providers");
         $this->info("  {$this->toNamespace('modules/'.$moduleName)}\\Providers\\RouteServiceProvider::class");
+    }
+
+    /**
+     * To support 5.0, the old way
+     *
+     * @return array
+     */
+    public function getArguments()
+    {
+        return [
+            ['name', InputArgument::REQUIRED, 'The module name'],
+        ];
     }
 }
