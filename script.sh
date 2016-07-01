@@ -1,6 +1,6 @@
 cd ${LARAVEL_FOLDER}
 composer require ${PACKAGE_NAME}:dev-${TRAVIS_BRANCH}
-composer update
+composer update --no-scripts
 ls
 
 ./artisan cache:clear
