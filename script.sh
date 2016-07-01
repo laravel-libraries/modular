@@ -6,4 +6,4 @@ ls
 ./artisan cache:clear
 ./artisan config:clear
 
-vendor/bin/phpunit -c vendor/${PACKAGE_NAME}/phpunit.xml --testsuite ${TEST_SUITE}
+vendor/bin/phpunit -c vendor/${PACKAGE_NAME}/phpunit.xml

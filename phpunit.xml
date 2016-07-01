@@ -12,17 +12,8 @@
     syntaxCheck="false"
 >
     <testsuites>
-        <testsuite name="Laravel5.0">
-            <directory>./tests/Laravel5.0</directory>
-        </testsuite>
-        <testsuite name="Laravel5.1">
-            <directory>./tests/Laravel5.1</directory>
-        </testsuite>
-        <testsuite name="Laravel5.2">
-            <directory>./tests/Laravel5.2</directory>
-        </testsuite>
-        <testsuite name="Laravel5.3">
-            <directory>./tests/Laravel5.3</directory>
+        <testsuite name="base">
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>

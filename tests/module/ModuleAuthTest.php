@@ -1,9 +1,17 @@
 <?php
 
+use Illuminate\Foundation\Application as APP;
+
 class ModuleAuthTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
+        if ((float) APP::VERSION == (float) 5.0) {
+            $this->markTestSkipped(
+                'Auth is not available in Laravel 5.0'
+            );
+        }
+
         Artisan::call('make:module', [
             'name' => 'Acme',
         ]);

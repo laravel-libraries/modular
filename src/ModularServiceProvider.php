@@ -14,16 +14,16 @@ class ModularServiceProvider extends ServiceProvider
     public function register()
     {
         $commands = [
-            // Commands\Module\Console::class,
-            // Commands\Module\Controller::class,
-            // Commands\Module\Middleware::class,
-            // Commands\Module\Model::class,
-            // Commands\Module\Provider::class,
             Commands\Make\Module::class,
         ];
 
         if ((float) APP::VERSION >= (float) 5.2) {
             $commands[] = Commands\Module\Auth::class;
+            // $commands[] = Commands\Module\Console::class;
+            // $commands[] = Commands\Module\Controller::class;
+            // $commands[] = Commands\Module\Middleware::class;
+            // $commands[] = Commands\Module\Model::class;
+            // $commands[] = Commands\Module\Provider::class;
         }
 
         $this->commands($commands);
