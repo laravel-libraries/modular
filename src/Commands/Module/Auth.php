@@ -23,14 +23,14 @@ class Auth extends MakeAuthCommand
      * {@inheritdoc}
      */
     protected $views = [
-        'auth/login.stub' => 'vendor/modular/auth/login.blade.php',
-        'auth/register.stub' => 'vendor/modular/auth/register.blade.php',
+        'home.stub'                 => 'vendor/modular/home.blade.php',
+        'welcome.stub'              => 'vendor/modular/welcome.blade.php',
+        'auth/login.stub'           => 'vendor/modular/auth/login.blade.php',
+        'auth/register.stub'        => 'vendor/modular/auth/register.blade.php',
         'auth/passwords/email.stub' => 'vendor/modular/auth/passwords/email.blade.php',
         'auth/passwords/reset.stub' => 'vendor/modular/auth/passwords/reset.blade.php',
         'auth/emails/password.stub' => 'vendor/modular/auth/emails/password.blade.php',
-        'layouts/app.stub' => 'vendor/modular/layouts/app.blade.php',
-        'home.stub' => 'vendor/modular/home.blade.php',
-        'welcome.stub' => 'vendor/modular/welcome.blade.php',
+        'layouts/app.stub'          => 'vendor/modular/layouts/app.blade.php',
     ];
 
 
@@ -74,7 +74,7 @@ class Auth extends MakeAuthCommand
      */
     protected function createDirectories()
     {
-        if (! is_dir(base_path('resources/views/layouts'))) {
+        if (! is_dir(base_path('resources/views/vendor/modular/layouts'))) {
             mkdir(base_path('resources/views/vendor/modular/layouts'), 0755, true);
         }
 
