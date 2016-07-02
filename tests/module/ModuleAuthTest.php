@@ -6,9 +6,7 @@ class ModuleAuthTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $version = trim(str_replace('(LTS)', '', APP::VERSION));
-
-        if ((float) $version == (float) 5.0) {
+        if ((float) APP::VERSION <= (float) 5.1) {
             $this->markTestSkipped(
                 'Auth is not available in Laravel 5.0'
             );
