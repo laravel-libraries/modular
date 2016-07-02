@@ -12,6 +12,7 @@ class Module extends Commands\Command
 
     /**
      * To support 5.0, the old way
+     * {@inheritdoc}
      *
      * @var string
      */
@@ -52,6 +53,17 @@ class Module extends Commands\Command
     }
 
     /**
+     * To support 5.0, the old way
+     * {@inheritdoc}
+     *
+     * @return mixed
+     */
+    public function fire()
+    {
+        $this->handle();
+    }
+
+    /**
      * Execute the console command.
      *
      * @return mixed
@@ -78,6 +90,7 @@ class Module extends Commands\Command
 
     /**
      * To support 5.0, the old way
+     * {@inheritdoc}
      *
      * @return array
      */
