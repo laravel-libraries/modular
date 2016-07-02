@@ -23,7 +23,7 @@ class Module extends Commands\Command
      *
      * @var string
      */
-    protected $signature = 'make:module {name: The module name}';
+    protected $signature = 'make:module {name : The module name}';
 
     /**
      * The console command description.
