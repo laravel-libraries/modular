@@ -17,7 +17,9 @@ class ModularServiceProvider extends ServiceProvider
             Commands\Make\Module::class,
         ];
 
-        if ((float) APP::VERSION >= (float) 5.2) {
+        $version = trim(str_replace('(LTS)', '', APP::VERSION));
+
+        if ((float) $version >= (float) 5.2) {
             $commands[] = Commands\Module\Auth::class;
             // $commands[] = Commands\Module\Console::class;
             // $commands[] = Commands\Module\Controller::class;
