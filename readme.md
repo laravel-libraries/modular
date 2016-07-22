@@ -2,9 +2,29 @@
 
 ---
 
+### Build Status
+
 | master branch                                                                                                                          | develop branch                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------------------------------------------|
 | [![Build Status](https://travis-ci.org/laravel-libraries/modular.svg?branch=master)](https://travis-ci.org/laravel-libraries/modular)  | [![Build Status](https://travis-ci.org/laravel-libraries/modular.svg?branch=develop)](https://travis-ci.org/laravel-libraries/modular)  |
+
+---
+
+### Todo's
+
+| Status                                      | Commands                                          | Descriptions                                                             |  
+| ------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------ |  
+| :thumbsup:                                  | make:module {name}                                | Create a new module                                                      |  |  
+| :thumbsup:                                  | module:auth {module_name} {name}                  | Scaffold basic login and registration views and routes on your modules   |  
+| :hourglass:                                 | module:console {module_name} {name}               | Create a new module's Artisan command                                    |  
+| :hourglass:                                 | module:controller {module_name} {name}            | Create a new module's controller class                                   |  
+| :hourglass:                                 | module:event {module_name} {name}                 | Create a new module's event class                                        |  
+| :hourglass:                                 | module:job {module_name} {name}                   | Create a new module's job class                                          |  
+| :hourglass:                                 | module:middleware {module_name} {name}            | Create a new module's middleware class                                   |  
+| :hourglass:                                 | module:model {module_name} {name}                 | Create a new module's Eloquent model class                               |  
+| :hourglass:                                 | module:provider {module_name} {name}              | Create a new module's service provider class                             |  
+
+---
 
 Now managing your applications to have the same resources is made easy with this package.
 
